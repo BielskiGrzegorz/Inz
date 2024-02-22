@@ -1,0 +1,72 @@
+Menu:
+
+<Menu>:
+    GridLayout:
+        cols: 1
+        Label:
+            text: "menu"
+        Button:
+            text: "Start"
+            on_press:
+                root.manager.current = "start"
+        Button:
+            text: "Raport"
+            on_press:
+                root.manager.current = "raport"
+        Button:
+            text: "Dodaj"
+            on_press:
+                root.manager.current = "dodaj"
+        Button:
+            text: "Wyjście"
+            on_press:
+                exit(0)
+<Start>:
+    GridLayout:
+        cols: 1
+        Image:
+            source: "" if app.img_source is None else "%s"%(app.img_source)
+            id: obraz
+
+                
+                
+        GridLayout:
+            cols: 2
+            Button:
+                text: "odpowiedz 1"
+                on_press: 
+                    obraz.source = "bob.jpg"
+                   
+        
+            Button:
+                text: "odpowiedz 2"
+                on_press: 
+                    obraz.source = "img.jpg"
+            Button:
+                text: "odpowiedz 3"
+            Button:
+                text: "odpowiedz 4"
+        Button:
+            text: "Powrót"
+            on_press:
+                root.manager.current = "menu"
+
+<Raport>:
+    GridLayout:
+        cols: 1
+        Label:
+            text: "okno raportu"
+        Button:
+            text: "Powrót"
+            on_press:
+                root.manager.current = "menu"
+        
+<Dodaj>:
+    GridLayout:
+        cols: 1
+        Label:
+            text: "okno dodawania"
+        Button:
+            text: "Powrót"
+            on_press:
+                root.manager.current = "menu"
